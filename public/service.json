@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "title": "Wedding Event Management Service",
+      "details": "A joyous union of two people in love, celebrated with a ceremony and reception.",
+      "img_url": "https://i.ibb.co/YjDW0K9/pexels-photo-6498106.jpg",
+      "details_url": "https://example.com/wedding-details",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "title": "Birthday Party",
+      "details": "A gathering to celebrate the birth anniversary of an individual, often with cake and gifts.",
+      "img_url": "https://i.ibb.co/bdhxCdg/pexels-photo-7100322.webp",
+      "details_url": "https://example.com/birthday-details",
+      "rating": 3.8
+    },
+    {
+      "id": 3,
+      "title": "Anniversary Event Management Service",
+      "details": "Commemorating a milestone in a couple's life, such as a wedding or relationship anniversary.",
+      "img_url": "https://i.ibb.co/7jb7jWf/pexels-photo-2072175.webp",
+      "details_url": "https://example.com/anniversary-details",
+      "rating": 4.0
+    },
+    {
+      "id": 4,
+      "title": "Engagement Party",
+      "details": "A celebration of a couple's recent engagement, often with family and friends.",
+      "img_url": "https://i.ibb.co/K9YDhW7/pexels-photo-6479595.jpg",
+      "details_url": "https://example.com/engagement-details",
+      "rating": 4.2
+    },
+    {
+      "id": 5,
+      "title": "Holiday Party",
+      "details": "Festive gatherings held during holidays like Christmas, New Year's, or Halloween.",
+      "img_url": "https://i.ibb.co/6n66k31/pexels-photo-13073249.jpg",
+      "details_url": "https://example.com/holiday-details",
+      "rating": 4.1
+    },
+    {
+      "id": 6,
+      "title": "Haldi Management Service",
+      "details": "A party to celebrate an expectant mother and her upcoming arrival of a baby, typically with gifts.",
+      "img_url": "https://i.ibb.co/FscXYBp/haldi-decoration.jpg",
+      "details_url": "https://example.com/babyshower-details",
+      "rating": 4.3
+    }
+  ]
+  
