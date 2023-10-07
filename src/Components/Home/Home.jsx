@@ -2,6 +2,7 @@
 import { useLoaderData } from 'react-router-dom';
 import Banner from './Banner';
 import Service from './service';
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -25,13 +26,13 @@ const Home = () => {
                 <span className='text-4xl md:text-5xl lg:text-5xl text-yellow-400'>OUR </span>
                 <h1 className='text-4xl md:text-5xl lg:text-5xl'>SERVICE</h1>
             </div>
-            <div  className='grid lg:grid-cols-3 gap-7 mb-16 mt-20 max-w-7xl mx-auto md:grid-cols-2 grid-cols-1'>
+            <div  className='grid lg:grid-cols-3 gap-7 mb-16 mt-20 max-w-6xl mx-auto md:grid-cols-2 grid-cols-1'>
             {data.map(service=><Service key={service.id} services={service}></Service>)}
             </div>
                 
             </div>
 
-           
+           <Footer></Footer>
             
         </div>
 

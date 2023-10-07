@@ -8,12 +8,12 @@ const Banner = () => {
         Aos.init({duration: 2000});
     },[])
     return (
-     <div>
-           <div className="  carousel w-full">
+     <div className=' '>
+           <div className="   carousel w-full">
             
-            <div id="slide1" className="carousel-item  relative w-full">
+            <div id="slide1" className="carousel-item   relative w-full">
               <img 
-               src="https://i.ibb.co/FhjN7Py/image-5.jpg" className="w-full h-[80vh]  " />
+               src="https://i.ibb.co/FhjN7Py/image-5.jpg" className=" w-full h-[80vh]  " />
               
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 <a href="#slide4" className="btn btn-circle">❮</a> 
