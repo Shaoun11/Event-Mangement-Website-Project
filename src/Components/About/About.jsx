@@ -213,8 +213,8 @@ const About = () => {
     </p>
   </div>
 </div>
-                </div>
-            </div>
+ </div>
+   </div>
 
              {/* third */}
              <div data-aos="fade-right" className='object-center mt-[60px] mb-40 lg:flex md:flex  max-w-5xl mx-auto gap-32'>
