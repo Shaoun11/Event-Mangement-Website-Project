@@ -5,8 +5,8 @@ import Service from './service';
 
 
 const Home = () => {
-   const services=useLoaderData ();
-   console.log(services);
+  const data=useLoaderData();
+  console.log(data);
     return (
         <div>
             <div>
@@ -19,7 +19,17 @@ const Home = () => {
               <h1  className='lg:text-base md:text-base text-sm text-[#0B0B0BB2] text-center max-w-5xl mx-auto font-semibold'> As the premier event planning company in New York City, we know that it's not "one size fits all". Each event and client is unique and we believe our services should be as well. We know that it should be "Can I hire a planner?" not "Can I afford one?".</h1>
          
               </div>
-              <Service></Service>
+              
+            <div >
+            <div data-aos="fade-up" className='flex mt-24 gap-5 justify-center'>
+                <span className='text-4xl md:text-5xl lg:text-5xl text-yellow-400'>OUR </span>
+                <h1 className='text-4xl md:text-5xl lg:text-5xl'>SERVICE</h1>
+            </div>
+            <div  className='grid lg:grid-cols-3 gap-7 mb-16 mt-20 max-w-7xl mx-auto md:grid-cols-2 grid-cols-1'>
+            {data.map(service=><Service key={service.id} services={service}></Service>)}
+            </div>
+                
+            </div>
 
            
             
