@@ -12,7 +12,7 @@
   {
       "id": 2,
       "title": "Birthday Party",
-      "details": "A gathering to celebrate the birth anniversary of an individual, often with cake and gifts.",
+      "details": "A gathering to celebrate the birthday anniversary of an individual, often with cake and gifts.",
       "img_url": "https://i.ibb.co/bdhxCdg/pexels_photo_7100322.webp",
       "url": "https://i.ibb.co/F36P4h4/pexels_photo_7600387.webp",
       "rating": 5.0,
@@ -42,7 +42,7 @@
   {
       "id": 5,
       "title": "Holiday Party",
-      "details": "Festive gatherings held during holidays like Christmas, New Year's, or Halloween.",
+      "details": "Festive gatherings held during holidays like Christmas, New Year's, or other event Halloween.",
       "img_url": "https://i.ibb.co/6n66k31/pexels_photo_13073249.jpg",
       "url": "https://i.ibb.co/6n66k31/pexels_photo_13073249.jpg",
       "rating": 4.7,

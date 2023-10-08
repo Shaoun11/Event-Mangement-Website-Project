@@ -1,39 +1,14 @@
+import React from 'react';
 
-import { useLoaderData } from 'react-router-dom';
-import Banner from './Banner';
-import Service from './service';
-import Footer from '../Footer/Footer';
-import Proud from './Proud';
-
-
-const Home = () => {
-  const data=useLoaderData();
-  console.log(data);
+const Contact = () => {
     return (
         <div>
             <div>
-            <Banner></Banner>
-            </div>
-            <div   className='lg:mt-72 mt-14 md:mt-28 flex lg:gap-4 md:gap-4 justify-center'>
-                <span  className='lg:text-4xl md:text-4xl text-center font-semibold text-yellow-400'>Hello!</span>  <h1  className='lg:text-3xl md:text-3xl  font-semibold'> We Are an Event Planning Agency</h1>
-              </div>
-              <div className='mt-6'>
-              <h1  className='lg:text-base md:text-base text-sm text-[#0B0B0BB2] text-center max-w-5xl mx-auto font-semibold'> As the premier event planning company in New York City, we know that it's not "one size fits all". Each event and client is unique and we believe our services should be as well. We know that it should be "Can I hire a planner?" not "Can I afford one?".</h1>
-         
-              </div>
-              
-            <div >
-            <div data-aos="fade-up" className='flex mt-24 gap-5 justify-center'>
-                <span className='text-4xl md:text-5xl lg:text-5xl text-yellow-400'>OUR </span>
-                <h1 className='text-4xl md:text-5xl lg:text-5xl'>SERVICE</h1>
-            </div>
-            <div  className='grid  lg:grid-cols-3 gap-7 mb-16 mt-20 max-w-6xl mx-auto md:grid-cols-2 grid-cols-1'>
-            {data.map(service=><Service key={service.id} services={service}></Service>)}
-            </div>
-                
-            </div>
-            <Proud></Proud>
-            <div data-aos="fade-up" className="container my-24 mx-auto md:px-6">
+            <img src="https://i.ibb.co/zR8Fjc7/LINDSAYHITE-16.jpg" alt="" />
+            </div> 
+
+        
+<div className="container my-24 mx-auto md:px-6">
    <h1 className='text-5xl text-center mb-8'><span className='text-yellow-400'>Our</span> Location </h1>
   <section className="mb-32">
     <div
@@ -47,7 +22,7 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
-          <div className="flex flex-wrap  px-3 pt-12 pb-12 md:pb-0 lg:pt-0">
+          <div className="flex flex-wrap px-3 pt-12 pb-12 md:pb-0 lg:pt-0">
             <div className="mb-12 w-full shrink-0 grow-0 basis-auto px-3 md:w-6/12 md:px-6 lg:w-full xl:w-6/12 xl:px-12">
               <div className="flex items-start">
                 <div className="shrink-0">
@@ -147,11 +122,13 @@ const Home = () => {
     </div>
   </section>
 </div>
-           <Footer></Footer>
-            
-        </div>
 
+  
+
+</div>
+
+   
     );
 };
 
-export default Home;
+export default Contact;

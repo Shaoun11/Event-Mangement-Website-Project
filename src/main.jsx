@@ -8,6 +8,11 @@ import Error404 from './Error404.jsx'
 import Home from './Components/Home/Home.jsx'
 import Details from './Components/DetailCard/Details.jsx'
 import About from './Components/About/About.jsx'
+import Testimonial from './Components/Testimonial/Testimonial.jsx'
+import Contact from './Components/Contact/Contact.jsx'
+import Login from './Components/Authentication/Login.jsx'
+import Register from './Components/Authentication/Register.jsx'
+import AuthProvider from './Components/AuthProvider/AuthProvider.jsx'
 
 
 const createroute=createBrowserRouter([
@@ -29,6 +34,22 @@ const createroute=createBrowserRouter([
     {
     path:"/about",
     element:<About></About>
+   },
+    {
+    path:"/testimonial",
+    element:<Testimonial></Testimonial>
+   },
+    {
+    path:"/contact",
+    element:<Contact></Contact>
+   },
+    {
+    path:"/login",
+    element:<Login></Login>
+   },
+    {
+    path:"/register",
+    element:<Register></Register>
    }
 
   ]}
@@ -37,6 +58,7 @@ const createroute=createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={createroute}></RouterProvider>
+    <AuthProvider><RouterProvider router={createroute}></RouterProvider></AuthProvider>
+    
   </React.StrictMode>,
 )

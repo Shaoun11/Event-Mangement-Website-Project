@@ -1,9 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBeer, FaFacebook, FaFontAwesomeLogoFull, FaSign } from 'react-icons/fa';
 const Header = () => {
     const link=<>
       <li><NavLink to={"/"}>Home</NavLink></li>
+      <li><NavLink to={"/testimonial"}>Testimonial</NavLink></li>
       <li><NavLink to={"/about"}>About</NavLink></li>
       <li><NavLink to={"/contact"}>Contact</NavLink></li>
 
@@ -31,7 +32,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn btn-warning p-2 px-6">Log In</a>
+   <Link to={"/login"}><button className="btn btn-warning bg-red-400 border-none text-white p-2 px-6">Log In</button></Link> 
   </div>
 </div>
     );

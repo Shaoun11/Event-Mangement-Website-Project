@@ -8,9 +8,9 @@ const Service = ({services}) => {
 
 
     return (
-       <Link to={`/details/${id}`}>
+      
         
-        <div data-aos='fade-up' className="  flex  h-[490px] max-w-[26rem]  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+        <div data-aos='fade-up' className="  flex  h-[490px] max-w-[26rem]  flex-col rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-lg">
   <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
     <img className=''
       src={img_url}
@@ -44,11 +44,11 @@ const Service = ({services}) => {
     <p className="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
       {details}
     </p>
-   
+    <Link to={`/details/${id}`}> <button className='btn w-full text-white btn-warning  mt-8 '>Read More</button></Link>
   </div>
  
 </div>
-       </Link>
+       
       
     );
 };
