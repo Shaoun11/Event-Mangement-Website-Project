@@ -10,7 +10,7 @@ const Service = ({services}) => {
     return (
       
         
-        <div data-aos='fade-up' className="  flex  h-[490px] max-w-[26rem]  flex-col rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-lg">
+        <div data-aos='fade-up' className=" flex  h-[470px] max-w-[26rem]  flex-col rounded-xl bg-gray-100 bg-clip-border text-gray-700 shadow-lg">
   <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
     <img className=''
       src={img_url}
@@ -20,7 +20,7 @@ const Service = ({services}) => {
 
   </div>
   <div className="p-6">
-    <div className="mb-3 flex items-center justify-between">
+    <div className="mb- flex items-center justify-between">
       <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
        {title}
       </h5>
@@ -44,7 +44,7 @@ const Service = ({services}) => {
     <p className="block font-sans text-base font-light leading-relaxed text-gray-700 antialiased">
       {details}
     </p>
-    <Link to={`/details/${id}`}> <button className='btn w-full text-white btn-warning  mt-8 '>Read More</button></Link>
+    <Link to={`/details/${id}`}> <button className='btn w-full text-white btn-warning  mt-6 '>Read More</button></Link>
   </div>
  
 </div>

@@ -13,6 +13,7 @@ import Contact from './Components/Contact/Contact.jsx'
 import Login from './Components/Authentication/Login.jsx'
 import Register from './Components/Authentication/Register.jsx'
 import AuthProvider from './Components/AuthProvider/AuthProvider.jsx'
+import PrivateRoute from './Components/PrivateRoute.jsx'
 
 
 const createroute=createBrowserRouter([
@@ -28,7 +29,7 @@ const createroute=createBrowserRouter([
    },
     {
     path:"/details/:id",
-    element:<Details></Details>,
+    element:<PrivateRoute><Details></Details></PrivateRoute>,
     loader: ()=>fetch('./service.json')
    },
     {

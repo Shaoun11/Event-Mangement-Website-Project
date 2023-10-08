@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBeer, FaFacebook, FaFontAwesomeLogoFull, FaSign } from 'react-icons/fa';
+import { Authcontext } from '../AuthProvider/AuthProvider';
 const Header = () => {
     const link=<>
       <li><NavLink to={"/"}>Home</NavLink></li>
@@ -10,7 +11,7 @@ const Header = () => {
 
     </>
       
-    
+    const {user,logout}=useContext(Authcontext);
     return (
         <div className="navbar bg-gray-100 ">
   <div className="navbar-start ">
@@ -31,8 +32,28 @@ const Header = () => {
      {link}
     </ul>
   </div>
-  <div className="navbar-end">
-   <Link to={"/login"}><button className="btn btn-warning bg-red-400 border-none text-white p-2 px-6">Log In</button></Link> 
+  <div className="flex gap-3 navbar-end">
+    <p>{user?.displayName}</p>
+    <div>
+    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        {user? <div className="w-14 rounded-full">
+        
+          <img src={user?.photoURL}/>
+       
+        </div>:<div className="w-14  rounded-full">
+          <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"/>
+        </div>}
+      </label>
+    </div>
+   <div>
+    {
+      user?<Link >  <button onClick={logout} className="btn btn-outline ">Log Out</button></Link> :
+      <Link to={"/login"}>  <button className="btn btn-outline ">Log in</button></Link>
+ 
+    }
+  
+   </div>
+
   </div>
 </div>
     );

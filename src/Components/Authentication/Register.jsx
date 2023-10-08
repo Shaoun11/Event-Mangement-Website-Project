@@ -1,14 +1,59 @@
-import React from 'react';
-import { Form, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Form, NavLink, Navigate, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Authcontext } from '../AuthProvider/AuthProvider';
+
 
 const Register = () => {
+    const navigate=useNavigate();
+    const { createuser,googlelogin,githublogin,handleUpdateProfile}=useContext(Authcontext);
+    const handlemanuallyregister=e=>{
+        e.preventDefault()
+        const email=e.target.email.value;
+        const password=e.target.password.value;
+        const img=e.target.img.value;
+        const name=e.target.name.value;
+        console.log(email,password,name,img);
+
+       
+        createuser(email,password)
+        .then((userCredential) => {
+            handleUpdateProfile(name, img)
+            .then(()=>{
+                toast.success('Registation Successfully!')
+                window.location.reload();
+                
+            })
+            
+         
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            toast.error("Registation failed,please try again!")
+            console.log(errorMessage);
+            console.log(errorCode);
+          });
+
+    }
+    const handleloginadd=(media)=>{
+        media()
+        .then(res => {
+            toast.success('User logged in successfully');
+            navigate("/")
+          
+        })
+        .catch(error => {
+            toast.error(error.message)
+        })
+    }
     return (
         <div>
         <div className="min-h-screen bg-white text-gray-900 flex justify-center">
 <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
     <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
         <div>
-         <img className='object-center ml-[120px]' src="https://i.ibb.co/421XvGG/nica-dark.png" alt="" />
+         {/* logo */}
         </div>
         <div className="mt-12 flex flex-col items-center">
             <h1 className="text-2xl xl:text-3xl font-extrabold">
@@ -16,7 +61,7 @@ const Register = () => {
             </h1>
             <div className="w-full flex-1 mt-8">
                 <div className="flex flex-col items-center">
-                    <button
+                    <button onClick={()=>handleloginadd(googlelogin)}
                         className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                         <div className="bg-white p-2 rounded-full">
                             <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -39,7 +84,7 @@ const Register = () => {
                         </span>
                     </button>
 
-                    <button 
+                    <button  onClick={()=>handleloginadd(githublogin)}
                         className="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5">
                         <div className="bg-white p-1 rounded-full">
                             <svg className="w-6" viewBox="0 0 32 32">
@@ -61,10 +106,13 @@ const Register = () => {
                 </div>
 
                 <div className="mx-auto max-w-xs">
-                   <Form >
+                   <Form onSubmit={handlemanuallyregister}>
                    <input
                         className="w-full px-8 mb-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text" name='name' placeholder="Your name" />
+                   <input
+                        className="w-full px-8 mb-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                        type="text" name='img' placeholder="Your image" />
                    <input
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="email" name='email' placeholder="Email" />
@@ -72,7 +120,7 @@ const Register = () => {
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                         type="password" name='password' placeholder="Password" />
                     <button
-                        className="mt-5 tracking-wide font-semibold bg-red-400 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                        className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
@@ -84,7 +132,7 @@ const Register = () => {
                         </span>
                     </button>
                    </Form>
-                    <h4 className="mt-6 text-xs text-gray-600 text-center" >Alreadr,you have account please  <span className='text-red-500 font-semibold'> <NavLink to={"/login"} >Log in</NavLink></span>  </h4>
+                    <h4 className="mt-6 text-xs text-gray-600 text-center" >Alreadr,you have account please  <span className='text-indigo-500 font-semibold'> <NavLink to={"/login"} >Log in</NavLink></span>  </h4>
                     <p className="mt-6 text-xs text-gray-600 text-center">
                         I agree to abide by templatana's
                         <a href="#" className="border-b border-gray-500 border-dotted">

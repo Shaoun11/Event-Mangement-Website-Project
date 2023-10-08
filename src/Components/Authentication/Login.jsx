@@ -1,26 +1,48 @@
+import React, { useContext } from 'react';
+import { Form, Link, useNavigate } from 'react-router-dom';
 
-import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Form, Link, Navigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Authcontext } from '../AuthProvider/AuthProvider';
+
+
+
 
 const Login = () => {
-    const {googlelogin}=useContext(AuthContext);
-
-    const userlogin=(e)=>{
-        e.preventdefault()
-    }
-    const handleloginpopup=(media)=>{
-        media()
-        .then(res => {
-            toast.success('User logged in successfully');
-             
-        })
-        .catch(error => {
-            toast.error(error.message)
-        })
-    }
+    const navigate=useNavigate()
+    const {userlogin,googlelogin}=useContext(Authcontext);
+    const handlelogin = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password);
+        userlogin(email,password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            toast.success('Login Successfully!')
+            console.log(user);
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            toast.error("Login failed,please try again!")
+            console.log(errorMessage);
+            console.log(errorCode);
+          }); }
+          
+          const handleloginpopup=(media)=>{
+            media()
+            .then(res => {
+                toast.success('User logged in successfully');
+                navigate('/')
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+        }
     return (
+        <>
         <div className='mt-20'>
             
         <div className="py-16">
@@ -32,7 +54,7 @@ const Login = () => {
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">Hey</h2>
                     <p className="text-xl text-gray-600 text-center">Welcome back!</p>
-                    <a onClick={()=>handleloginpopup(googlelogin)}  href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
+                    <a onClick={()=>handleloginpopup(googlelogin)} href="#" className="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
                         <div className="px-4 py-3">
                             <svg className="h-6 w-6" viewBox="0 0 40 40">
                                 <path
@@ -56,7 +78,7 @@ const Login = () => {
                         <a href="#" className="text-xs text-center text-gray-500 uppercase">or login with email</a>
                         <span className="border-b w-1/5 lg:w-1/4"></span>
                     </div>
-                    <Form onSubmit={userlogin}>
+                    <Form onSubmit={handlelogin}>
                         <div className="mt-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
                             <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name='email' type="email" />
@@ -74,7 +96,7 @@ const Login = () => {
                     </Form>
                     <div className="mt-4 flex items-center justify-between">
                         <span className="border-b w-1/5 md:w-1/4"></span>
-                        <a href="#" className="text-xs text-gray-500 uppercase ">or <Link to={"/register"}><span className='font-semibold text-red-500'>Create Account</span></Link> </a>
+                        <a href="#" className="text-xs text-gray-500 uppercase ">or <Link to={"/register"}><span className='font-semibold text-purple-500'>sign up</span></Link> </a>
                         <span className="border-b w-1/5 md:w-1/4"></span>
                     </div>
                 </div>
@@ -82,6 +104,8 @@ const Login = () => {
         </div>
 
     </div>
+        </>
+        
     );
 };
 
