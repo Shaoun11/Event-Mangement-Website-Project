@@ -38,11 +38,11 @@ const createroute=createBrowserRouter([
    },
     {
     path:"/testimonial",
-    element:<Testimonial></Testimonial>
+    element:<PrivateRoute><Testimonial></Testimonial></PrivateRoute>
    },
     {
     path:"/contact",
-    element:<Contact></Contact>
+    element:<PrivateRoute><Contact></Contact></PrivateRoute>
    },
     {
     path:"/login",

@@ -1,12 +1,69 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 
 const Contact = () => {
     return (
         <div>
-            <div>
-            <img src="https://i.ibb.co/zR8Fjc7/LINDSAYHITE-16.jpg" alt="" />
-            </div> 
+  <div className="relative overflow-hidden bg-cover bg-no-repeat">
+    <img src="https://i.ibb.co/zR8Fjc7/LINDSAYHITE-16.jpg" alt="" />
+    <div
+      className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed">
+      <div className="flex h-full items-center justify-center">
+        <div className="px-6 text-center text-white md:px-12">
+          <h1 className="mt-2 mb-16 text-5xl font-semibold tracking-tight md:text-6xl xl:text-7xl">
+           <span className='mt-2 mb-16 text-5xl font-semibold tracking-tight md:text-6xl xl:text-7xl text-yellow-400'>Say</span> hello...
+          </h1>
+        
+        </div>
+      </div>
+    </div>
 
+
+
+            </div> 
+            <div>
+            <div className="bg-gray-100">
+    <div className="container mx-auto py-12">
+        <div className="max-w-lg mx-auto px-4">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+                How can we help you
+            </h2>
+            <p className="text-gray-700 mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis velit
+                eget nisi lobortis dignissim.
+            </p>
+            <form className="bg-white rounded-lg px-6 py-8 shadow-md">
+                <div className="mb-4">
+                    <label className="block text-gray-700 font-bold mb-2" for="name">Name</label>
+                    <input
+                        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="name" type="text" placeholder="Enter your name"/>
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 font-bold mb-2" for="email">Email</label>
+                    <input
+                        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="email" type="email" placeholder="Enter your email"/>
+                </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700 font-bold mb-2" for="message">Message</label>
+                    <textarea
+                        className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="message" rows="6" placeholder="Enter your message"></textarea>
+                </div>
+                <div className="flex justify-end">
+                    <button
+                        className="bg-red-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="button">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+            </div>
         
 <div className="container my-24 mx-auto md:px-6">
    <h1 className='text-5xl text-center mb-8'><span className='text-yellow-400'>Our</span> Location </h1>
@@ -41,7 +98,7 @@ const Contact = () => {
                   <p className="text-neutral-500">
                     support@example.com
                   </p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     +1 234-567-89
                   </p>
                 </div>
@@ -62,10 +119,10 @@ const Contact = () => {
                   <p className="mb-2 font-bold text-black">
                     Sales questions
                   </p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     sales@example.com
                   </p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     +1 234-567-89
                   </p>
                 </div>
@@ -85,10 +142,10 @@ const Contact = () => {
                 </div>
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold text-black">Press</p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     press@example.com
                   </p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     +1 234-567-89
                   </p>
                 </div>
@@ -107,7 +164,7 @@ const Contact = () => {
                 </div>
                 <div className="ml-6 grow">
                   <p className="mb-2 font-bold text-black">Bug report</p>
-                  <p className="text-neutral-500 ">
+                  <p className="">
                     bugs@example.com
                   </p>
                   <p className="text-neutral-500">
@@ -123,7 +180,7 @@ const Contact = () => {
   </section>
 </div>
 
-  
+  <Footer></Footer>
 
 </div>
 

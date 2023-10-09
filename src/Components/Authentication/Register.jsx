@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, NavLink, Navigate, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { Authcontext } from '../AuthProvider/AuthProvider';
 
 
 const Register = () => {
+    const [error,seterror]=useState('')
+    const [success,setsuccess]=useState('')
     const navigate=useNavigate();
     const { createuser,googlelogin,githublogin,handleUpdateProfile}=useContext(Authcontext);
     const handlemanuallyregister=e=>{
@@ -15,13 +17,23 @@ const Register = () => {
         const name=e.target.name.value;
         console.log(email,password,name,img);
 
-       
+        seterror('');
+        setsuccess('');
+        if (password.length < 6) {
+            seterror("Password should be at least 6 characters ")
+            return;
+        }
+        else if (!/[A-Z]+[a-z]/.test(password)) {
+            seterror("Invalid Password Input for Uppercase and Lowercase ")
+            return;
+        }
         createuser(email,password)
         .then((userCredential) => {
             handleUpdateProfile(name, img)
             .then(()=>{
                 toast.success('Registation Successfully!')
                 window.location.reload();
+                <Navigate to="/" replace ></Navigate>
                 
             })
             
@@ -53,7 +65,7 @@ const Register = () => {
 <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
     <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
         <div>
-         {/* logo */}
+         <img className='lg:ml-[124px] ml-8 md:ml-14' src="https://i.ibb.co/421XvGG/nica-dark.png" alt="" />
         </div>
         <div className="mt-12 flex flex-col items-center">
             <h1 className="text-2xl xl:text-3xl font-extrabold">
@@ -131,6 +143,12 @@ const Register = () => {
                             Sign Up
                         </span>
                     </button>
+                    {
+        error && <h1 className='font-semibold text-red-500 ml-1 mb-5'>{error}</h1>
+      }
+      {
+        success && <h1 className='font-semibold text-green-500 ml-20'>{success}</h1>
+      }
                    </Form>
                     <h4 className="mt-6 text-xs text-gray-600 text-center" >Alreadr,you have account please  <span className='text-indigo-500 font-semibold'> <NavLink to={"/login"} >Log in</NavLink></span>  </h4>
                     <p className="mt-6 text-xs text-gray-600 text-center">

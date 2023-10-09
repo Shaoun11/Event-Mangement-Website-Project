@@ -32,8 +32,8 @@ const Header = () => {
      {link}
     </ul>
   </div>
-  <div className="flex gap-3 navbar-end">
-    <p>{user?.displayName}</p>
+  <div className="lg:flex md:flex gap-3 navbar-end">
+  <p className=''>{user?.displayName}</p>
     <div>
     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         {user? <div className="w-14 rounded-full">
@@ -47,7 +47,7 @@ const Header = () => {
     </div>
    <div>
     {
-      user?<Link >  <button onClick={logout} className="btn btn-outline ">Log Out</button></Link> :
+      user?<Link >  <button onClick={logout} className="btn btn-outline font-medium ">Log Out</button></Link> :
       <Link to={"/login"}>  <button className="btn btn-outline ">Log in</button></Link>
  
     }
