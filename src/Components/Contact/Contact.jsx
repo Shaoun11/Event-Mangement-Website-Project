@@ -29,8 +29,7 @@ const Contact = () => {
                 How can we help you
             </h2>
             <p className="text-gray-700 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis velit
-                eget nisi lobortis dignissim.
+            Event management is the process of planning, organizing, and executing events, such as conferences, weddings, festivals, and corporate gatherings, to ensure they run smoothly and successfully.
             </p>
             <form className="bg-white rounded-lg px-6 py-8 shadow-md">
                 <div className="mb-4">
