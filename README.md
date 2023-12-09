@@ -1,11 +1,11 @@
-# Event Management Website live link:- https://aquamarine-strudel-9b602f.netlify.app/
+## Event Management Website live link:- # https://aquamarine-strudel-9b602f.netlify.app/
 
 ## Project Info
 
 - Plan unforgettable moments effortlessly with our event management website. From corporate gatherings to personal celebrations, discover seamless organization, diverse services, and expert guidance at every step. Your vision, meticulously brought to life with precision and creativity, awaits on our user-friendly platform.
 
 ## Project Description
-- Welcome to Unica Event Management, where we weave dreams into reality. Our website is your portal to seamless event planning, innovative concepts, and flawless execution. From corporate galas to intimate weddings and vibrant community gatherings, our dedicated team specializes in crafting unforgettable moments tailored precisely to your desires.
+Welcome to Unica Event Management, where we weave dreams into reality. Our website is your portal to seamless event planning, innovative concepts, and flawless execution. From corporate galas to intimate weddings and vibrant community gatherings, our dedicated team specializes in crafting unforgettable moments tailored precisely to your desires.
 
 Navigate our user-friendly platform to explore a diverse array of services catering to your unique needs. Delve into our portfolio showcasing a tapestry of successfully orchestrated events, offering inspiration for your own memorable occasion.
 
