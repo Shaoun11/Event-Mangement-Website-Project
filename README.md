@@ -1,4 +1,4 @@
-## Event Management Website live link:- # https://aquamarine-strudel-9b602f.netlify.app/
+## Event Management Website live link:- https://aquamarine-strudel-9b602f.netlify.app/
 
 ## Project Info
 
