@@ -1,4 +1,5 @@
-## Event Management Website live link:- https://aquamarine-strudel-9b602f.netlify.app/
+## My Project Name is Event Management Website
+- Project Live Site Link:- https://aquamarine-strudel-9b602f.netlify.app/
 
 ## Project Info
 
