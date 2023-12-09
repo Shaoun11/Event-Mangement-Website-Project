@@ -8,8 +8,10 @@ const Banner = () => {
         Aos.init({duration: 2000});
     },[])
     return (
-     <div className=' '>
-           <div className="   carousel w-full">
+     <div className=''>
+            
+
+           <div className=" max-w-7xl mx-auto  carousel w-full">
             
             <div id="slide1" className="carousel-item   relative w-full">
               <img 
@@ -46,7 +48,7 @@ const Banner = () => {
           </div>
         <div>
            
-          <h1 data-aos="fade-right" className=' font-serif text-center -mt-[310px] md:-mt-[320px] lg:-mt-[490px] lg:text-7xl md:text-6xl text-5xl font-semibold text-yellow-400'>Your Event</h1>
+          <h1 data-aos="fade-right" className=' font-serif text-center -mt-[450px] md:-mt-[320px] lg:-mt-[500px] lg:text-7xl md:text-6xl text-5xl font-semibold text-yellow-400'>Your Event</h1>
                 
                 
             
